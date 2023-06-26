@@ -19,3 +19,7 @@ body {
 .navbar-nav li {
     padding: 0px 10px;
 }
+
+.nav-link {
+    text-align: center;
+}
