@@ -1,0 +1,21 @@
+html,
+body {
+    background-color: #462d81 !important;
+    font-family: "Helvetica", Arial, sans-serif !important;
+}
+
+.navbar.bg-dark {
+    background-color: #462d81 !important;
+}
+
+.navbar-brand {
+    width: 200px;
+}
+
+.navbar-nav {
+    font-size: 32px;
+}
+
+.navbar-nav li {
+    padding: 0px 10px;
+}
