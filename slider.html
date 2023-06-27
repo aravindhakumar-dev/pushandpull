@@ -20,7 +20,7 @@
             z-index: -1;
         }
 
-        .container .slider_container .slide iframe {
+        .container .slider_container .slide video {
             position: absolute;
             top: 0;
             left: 0;
@@ -28,6 +28,13 @@
             height: 100%;
             width: 100%;
             object-fit: cover;
+            animation: fadeIn 0.4s linear;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                transform: scale(0.5s);
+            }
         }
 
         .container .slider_container .slide .content {
@@ -37,15 +44,24 @@
             align-items: center;
             justify-content: center;
             flex-flow: column;
+            color: #fff;
+        }
+
+        .container .slider_container {
+            display: none;
+        }
+
+        .container .slider_container.active {
+            display: block;
         }
     </style>
     <div class="container">
-        <div class="slider_container">
+        <div class="slider_container active">
             <div class="slide">
                 <div class="content">
                     <h3>Title</h3>
                 </div>
-                <iframe src="https://www.youtube.com/embed/dDcwpJLRZsg" frameborder="0" allowfullscreen></iframe>
+                <video src="/videos/PnP_Samudhrika.mp4"></video>
             </div>
         </div>
     </div>
@@ -55,10 +71,26 @@
                 <div class="content">
                     <h3>Title</h3>
                 </div>
-                <iframe src="https://www.youtube.com/embed/dDcwpJLRZsg" frameborder="0" allowfullscreen></iframe>
+                <video src="/videos/PnP_Samudhrika.mp4"></video>
             </div>
         </div>
     </div>
+    <script>
+        let slides = document.querySelectorAll('.slide-container');
+        let index = 0;
+        function next() {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        function prev() {
+            slides[index].classList.remove('active');
+            index = (index - 1 + slides.length) % slides.length;
+            slides[index].classList.add('active');
+        }
+    </script>
+
 </body>
 
 </html>
